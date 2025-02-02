@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:navify/authentication/login_page.dart';
+import 'package:navify/pages/login_page.dart';
 
 import '../pages/home_page.dart';
 import 'check_authentication.dart';

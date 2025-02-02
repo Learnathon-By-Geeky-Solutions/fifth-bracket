@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import 'forgot_password_page.dart';
+
 class LoginPage extends StatefulWidget {
   final VoidCallback showRegisterPage;
   const LoginPage({super.key, required this.showRegisterPage});
@@ -22,9 +24,9 @@ class _LoginPageState extends State<LoginPage> {
       password: _passwordConteroller.text.trim(),
     );
   }
+
   @override
-  void dispose()
-  {
+  void dispose() {
     _emailConteroller.dispose();
     _passwordConteroller.dispose();
     super.dispose();
@@ -89,6 +91,32 @@ class _LoginPageState extends State<LoginPage> {
                             border: InputBorder.none, hintText: 'Password'),
                       ),
                     ),
+                  ),
+                ),
+                SizedBox(height: 20),
+
+                ///Forget Password feature
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 25.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      GestureDetector(
+                        onTap:(){
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) {
+                                return ForgotPasswordPage();
+                              }));
+                          },
+                        child: Text(
+                          'Forgot Password ?',
+                          style: TextStyle(
+                            color: Colors.blue,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 SizedBox(height: 20),

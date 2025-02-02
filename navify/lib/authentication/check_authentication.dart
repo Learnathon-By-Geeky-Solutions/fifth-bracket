@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:navify/authentication/login_page.dart';
-import 'package:navify/authentication/register_page.dart';
+import 'package:navify/pages/login_page.dart';
+import 'package:navify/pages/register_page.dart';
 
 class CheckAuthentication extends StatefulWidget {
   const CheckAuthentication({super.key});
