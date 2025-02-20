@@ -19,28 +19,36 @@ class DashboardPage extends StatelessWidget {
                 onPressed: () {
                   // Add your onPressed code here!
                 },
-                child: Text('Add a Familiar Face'),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.location_on_rounded,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    Text('Saved Locations'),
+                  ],
+                ),
               ),
               SizedBox(height: 16),
               ElevatedButton(
                 onPressed: () {
                   // Add your onPressed code here!
                 },
-                child: Text('Saved Locations'),
-              ),
-              SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {
-                  // Add your onPressed code here!
-                },
-                child: Text('Saved Faces'),
-              ),
-              SizedBox(height: 16),
-              ElevatedButton(
-                onPressed: () {
-                  // Add your onPressed code here!
-                },
-                child: Text('Save a Location'),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.location_on_rounded,
+                      color: Colors.black,
+                      size: 30,
+                    ),
+                    Text('Save a Location'),
+                  ],
+                ),
               ),
             ],
           ),
