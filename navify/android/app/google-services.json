@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1046333571211",
+    "project_id": "navify-d8625",
+    "storage_bucket": "navify-d8625.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1046333571211:android:1c59a1e863f58d85e5d48e",
+        "android_client_info": {
+          "package_name": "com.example.navify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0gHBGD8TSnbPZMyLvt8CyUi25JgwVc54"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
