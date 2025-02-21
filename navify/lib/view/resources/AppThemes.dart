@@ -1,39 +1,45 @@
 import 'package:flutter/material.dart';
 class AppTheme {
+  final Color _primaryColor=Color(0xFFFFFF00);
+  final Color _onPrimaryColor=Color(0xFFF7F7D8);
+  final Color _secondaryColor=Color(0xFFFFFF00);
+  final Color _onSecondaryColor=Color(0xFFF7F7D8);
+  final Color _bgColor=Color(0xFF000000);
+  final Color _errorColor=Color(0xFFBB1F22);
   ThemeData getThemeData(){
     return ThemeData(
       colorScheme: ColorScheme(
         brightness: Brightness.light,
-        primary: Color(0xFFFFFF00),
-        onPrimary: Color(0xFFF7F7D8),
-        secondary: Color(0xFFFFFF00),
-        onSecondary: Color(0xFFF7F7D8),
-        error: Color(0xFFBB1F22),
-        onError: Color(0xFFBB1F22),
-        surface: Color(0xFF000000),
-        onSurface: Color(0xFF303030)
+        primary: _primaryColor,
+        onPrimary: _onPrimaryColor,
+        secondary: _secondaryColor,
+        onSecondary: _onSecondaryColor,
+        error: _errorColor,
+        onError: _errorColor,
+        surface: _bgColor,
+        onSurface: _bgColor,
       ),
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.black,
+        backgroundColor: _bgColor,
         centerTitle: true,
         titleTextStyle: TextStyle(
-          color: Color(0xFFFFFF00),
+          color: _primaryColor,
           fontSize: 20,
         ),
       ),
       buttonTheme: ButtonThemeData(
         colorScheme: ColorScheme(
           brightness: Brightness.light,
-          primary: Color(0xFF000000),
-          onPrimary: Color(0xFFF7F7D8),
-          secondary: Color(0xFF000000),
-          onSecondary: Color(0xFFF7F7D8),
-          error: Color(0xFFBB1F22),
-          onError: Color(0xFFBB1F22),
-          surface: Color(0xFFFFFF00),
-          onSurface: Color(0xFF303030)
+          primary: _primaryColor,
+          onPrimary: _onPrimaryColor,
+          secondary: _secondaryColor,
+          onSecondary: _secondaryColor,
+          error: _errorColor,
+          onError: _errorColor,
+          surface: _bgColor,
+          onSurface: _bgColor
         ),
-        buttonColor: Color(0xFFFFFF00),
+        buttonColor: _primaryColor,
         minWidth: 30,
       ),
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -43,9 +49,9 @@ class AppTheme {
               if (states.contains(MaterialState.disabled)) {
                 return Colors.grey; // Disabled color
               } else if (states.contains(MaterialState.pressed)) {
-                return Color(0xFFFFFF7F); // Pressed color
+                return _onPrimaryColor; // Pressed color
               }
-              return Color(0xFFFFFF00); // Default color
+              return _primaryColor; // Default color
             }
           ),
           foregroundColor: MaterialStateProperty.resolveWith<Color?>(
@@ -68,6 +74,18 @@ class AppTheme {
               return const Size(200, 60); // Default minimum size
             },
           ),
+        ),
+      ),
+    );
+  }
+  AppBar makeNormalAppBar(String title){
+    return AppBar(
+      title: Text(title),
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(1.0), // Set the height of the line
+        child: Container(
+          color: _primaryColor, // Set the color of the line
+          height: 1.0, // Set the height of the line (thickness)
         ),
       ),
     );
